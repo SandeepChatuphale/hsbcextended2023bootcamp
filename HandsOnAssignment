@@ -1,0 +1,32 @@
+Consider that Employee creation software needs to be developed for computerization of operations of an ABC organization.
+
+1) Write an Employee class which contains following attributes:
+Fields Data types 
+id:int 
+name:String 
+basicSalary:double 
+joiningDate:Date
+
+2) Write showDetails() method which print employee information. Also write toString() method in Employee class. id MUST be generated automatically. Write TestEmployee as a client class.
+
+3) Refer same Employee Application keep this Employee class inside appropriate package Write TestEmployee class and keep that in default package.
+
+4) Now create a hierarchy: 
+    WageEmployee and Manager these are Subclasses of Employee. SalesManager is subclass of Manager.
+
+     Details of the classes as below:-
+
+Class-Name                  Attributes 
+-----------------------------------------------------
+WageEmloyee                 hours ( int ) rate ( int )
+Salary formula :- WageEmployee : - basicSalary + hours*rate 
+
+Manager                     commision ( int ) 
+SalesManager                 incentives ( int ) 
+Manager: - basicSalary + commission; 
+SalesManager: basicSalary + commission + incentives 
+NOTE : - USE method overriding. (calculateSalary())
+
+5) Upgrade the Employee creation system in such a way that - By using Utility class we should be able print the Employees (Employee, Manager, SalesManager, WageEmployee) details. Using Printable interface.
+
+6) Upgrade the Employee creation system in such a way that now the system should be able to search an employee from a repository of employees based on the employeeId If user doesn’t find then system should throw a customized exception EmployeeNotFoundException.
