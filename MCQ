@@ -330,3 +330,138 @@ Q21 Given:
  E. Compilation fails
  F. An exception is thrown at runtime
 
+Q22) Given:
+class Plane {
+ static String s = "-";
+ public static void main(String[] args) {
+ new Plane().s1();
+ System.out.println(s);
+ }
+ void s1() {
+ try { s2(); }
+ catch (Exception e) { s += "c"; }
+ }
+ void s2() throws Exception {
+ s3(); s += "2";
+ s3(); s += "2b";
+ }
+ void s3() throws Exception {
+ throw new Exception();
+ }
+}
+ What is the result?
+ A. -
+ B. -c
+ C. -c2
+ D. -2c
+ E. -c22b
+ F. -2c2b
+ G. -2c2bc
+ H. Compilation fails
+
+23. Predict the output of the Java code given below
+
+    class MyResource {
+	public void close() {
+		System.out.println("Close in close");
+	}
+    }
+    class Demo {
+	public static void main(String[] arg) {
+	     try(MyResource s = new MyResource()) {
+	          throw new Exception();
+	     }catch(Exception e) {
+		  System.out.println("Close in catch");
+	}
+    }
+A. Close in close
+   Close in catch
+B. Close in catch
+   Close in close
+C. Compilation Error as MyResource does not extend Exception class
+D. Compilation Error as MyResource does not implement AutoCloseable
+
+
+24. In Java, which class needs to be extend from to create a Custom Exception 
+    which would be under the category of "Checked" Exception.
+A.  RuntimeException
+B.  Error
+C.  Exception
+D.  CheckedException
+
+
+25. Predict the output of the below Java code.
+    public class Car {
+         public void start() {
+	      try {
+                   System.out.println("Starting up");
+                   throw new Exception();
+              }
+              catch(Exception e) {
+		   System.out.println("Problem occurred");
+                   System.exit(0);
+              }
+              finally {
+          	   System.out.println("Lets walk");
+              }
+         } 
+         public static void main(String arg[]) {
+	     new Car().start();	  
+         }  
+    }
+A. Starting up.
+B. Starting up
+   Problem occurred
+C. Starting up
+   Problem occurred
+   Lets walk
+D. Runtime Error
+
+
+26. Which of these keywords is not a part of exception handling in Java ?
+A. throw
+B. throws
+C. thrown
+D. finally
+
+
+27. Predict the output of the below Java code.
+    public class Test{
+         public static void main(String[] args){
+	      try {
+	           int x=0;
+		   int y=50/x;
+		   System.out.print("Division by zero ");
+	      }
+	      catch(ArithmeticException e) {
+			System.out.print("Exception is caught ");
+	      }
+         }
+    }
+A. Division by Zero
+B. Division by zero Exception is caught
+C. Exception is caught
+D. No output as finally block is missing
+
+
+28. What would be the result of the given code snippet ?
+    //required code is present
+    try {
+         method();
+    }
+    catch(RuntimeException e) {  /* catch block 1 */
+         e.printStackTrace();
+    }
+    catch(Exception e) {  /* catch block 2 */
+         e.printStackTrace();
+    }
+    catch(IOException e) { /* catch block 3 */
+         e.printStackTrace();
+    }
+    //required code is present
+A. Compilation Error as multiple catch blocks not allowed
+B. Compilation Error due to sequence of catch block 1 and catch block 2
+C. Compilation Error due to sequence of catch block 2 and catch block 3
+D. Compilation Error as "Checked" Exception and "Unchecked" Exception cant be handled together
+
+
