@@ -539,3 +539,9 @@ Q31) Given:
  G. 1234 followed by an exception
  H. An exception is thrown with no other output
 
+
+Q32)Abstract class can contain constructor.
+a) true
+b) false
+
+
