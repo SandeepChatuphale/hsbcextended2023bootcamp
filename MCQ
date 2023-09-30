@@ -465,3 +465,77 @@ C. Compilation Error due to sequence of catch block 2 and catch block 3
 D. Compilation Error as "Checked" Exception and "Unchecked" Exception cant be handled together
 
 
+Q29) Given:
+class Emu {
+ static String s = "-";
+ public static void main(String[] args) {
+ try {
+ throw new Exception();
+ } catch (Exception e) {
+ try { 
+ try { throw new Exception();
+ } catch (Exception ex) { s += "ic "; }
+ throw new Exception(); } 
+ catch (Exception x) { s += "mc "; }
+ finally { s += "mf "; }
+ } finally { s += "of "; }
+ System.out.println(s);
+} }
+ What is the result?
+ A. -ic of
+ B. -mf of
+ C. -mc mf
+ D. -ic mf of
+ E. -ic mc mf of
+ F. -ic mc of mf
+ G. Compilation fails
+
+
+
+
+Q30) Given:
+ 3. class SubException extends Exception { }
+ 4. class SubSubException extends SubException { }
+ 5. 
+ 6. public class CC { void doStuff() throws SubException { } }
+ 7.
+ 8. class CC2 extends CC { void doStuff() throws SubSubException { } }
+ 9.
+10. class CC3 extends CC { void doStuff() throws Exception { } }
+11.
+12. class CC4 extends CC { void doStuff(int x) throws Exception { } }
+13.
+14. class CC5 extends CC { void doStuff() { } }
+ What is the result? (Choose all that apply.)
+ A. Compilation succeeds
+ B. Compilation fails due to an error on line 8
+ C. Compilation fails due to an error on line 10
+ D. Compilation fails due to an error on line 12
+ E. Compilation fails due to an error on line 14
+
+
+
+Q31) Given:
+ 3. public class OverAndOver {
+ 4. static String s = "";
+ 5. public static void main(String[] args) {
+ 6. try {
+ 7. s += "1";
+ 8. throw new Exception();
+ 9. } catch (Exception e) { s += "2"; 
+10. } finally { s += "3"; doStuff(); s += "4"; 
+11. }
+12. System.out.println(s);
+13. }
+14. static void doStuff() { int x = 0; int y = 7/x; }
+15. }
+ What is the result?
+ A. 12
+ B. 13
+ C. 123
+ D. 1234
+ E. Compilation fails
+ F. 123 followed by an exception
+ G. 1234 followed by an exception
+ H. An exception is thrown with no other output
+
