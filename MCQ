@@ -573,3 +573,250 @@ a) compilation error
 b) Exception
 c) In m2()
 d) None of the above
+
+
+Q34) Given two files:
+ 1. package pkgA;
+ 2. public class Foo {
+ 3. int a = 5;
+ 4. protected int b = 6;
+ 5. public int c = 7;
+ 6. }
+ 3. package pkgB;
+ 4. import pkgA.*;
+ 5. public class Baz extends Foo {
+ 6. public void display() {
+ 7. Foo f = new Foo();
+ 8. System.out.print(" " + f.a);
+ 9. System.out.print(" " + f.b);
+10. System.out.print(" " + f.c);
+11. }
+12. }
+ What is the result? (Choose all that apply.)
+ A. 5 6 7
+ B. 5 followed by an exception
+ C. Compilation fails with an error on line 7
+ D. Compilation fails with an error on line 8
+ E. Compilation fails with an error on line 9
+ F. Compilation fails with an error on line 10
+
+
+Q35) Given two files:
+ 1. package pkgA;
+ 2. public class Foo {
+ 3. int a = 5;
+ 4. protected int b = 6;
+ 5. public int c = 7;
+ 6. }
+ 3. package pkgB;
+ 4. import pkgA.*;
+ 5. public class Baz extends Foo {
+ 6. public void display() {
+ 7. Foo f = new Foo();
+ 8. System.out.print(" " + f.a);
+ 9. System.out.print(" " + b);
+10. System.out.print(" " + f.c);
+11. }
+12. }
+ What is the result? (Choose all that apply.)
+ A. 5 6 7
+ B. 5 followed by an exception
+ C. Compilation fails with an error on line 7
+ D. Compilation fails with an error on line 8
+ E. Compilation fails with an error on line 9
+ F. Compilation fails with an error on line 10
+
+Q36)  Given:
+ 3. public class Dark {
+ 4. int x = 3;
+ 5. public static void main(String[] args) {
+ 6. new Dark().go1();
+ 7. }
+ 8. void go1() {
+ 9. int x;
+10. go2(++x);
+11. }
+12. void go2(int y) {
+13. int x = ++y;
+14. System.out.println(x);
+15. }
+16. } 
+ What is the result?
+ A. 2
+ B. 3
+ C. 4
+ D. 5
+ E. Compilation fails
+ F. An exception is thrown at runtime
+
+
+Q37) Given:
+ 3. public class Ouch {
+ 4. static int ouch = 7;
+ 5. public static void main(String[] args) {
+ 6. new Ouch().go(ouch);
+ 7. System.out.print(" " + ouch);
+ 8. }
+ 9. void go(int ouch) {
+10. ouch++;
+11. for(ouch = 3; ouch < 6; ouch++) 
+12. ;
+13. System.out.print(" " + ouch);
+14. }
+15. } 
+ What is the result?
+ A. 5 7
+ B. 5 8
+ C. 8 7
+ D. 8 8
+ E. Compilation fails 
+ F. An exception is thrown at runtime
+G. 6 7
+
+
+Q38) public class Test {
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(20);
+		list.add(10);
+		list.add(50);
+		Collections.sort(list);
+		list.add(15);
+		System.out.println(list);
+	}
+}
+
+A. [10, 20, 50, 15]
+B. [15, 10, 20, 50]
+C. [10, 15, 20, 50]
+D. [20, 15, 10, 50]
+
+
+
+Q39) Which of the following interface is suitable for a class that stores associations of keys to values?
+A. Set
+B. SortedSet
+C. Map
+D. List
+
+Q40). Which of the following collections are synchronized by nature ?
+A. ArrayList
+B. LinkedList
+C. SynchronizedList
+D. Vector
+
+Q41) What would be the output of the Java code given below ?
+class Demo {
+	public static void main(String[] args) {
+		HashMap<Integer, String> map = new HashMap<>();
+		map.put(1, "A");
+		map.put(1, "B");
+		System.out.println(map.get(1));
+	}
+}
+A. A 
+B. B
+C. Compilation error as duplicates keys not allowed in Map
+D. A B
+
+
+Q42) Predict the output of below Java Code.
+public class Test {
+	public static void main(String[] args) {
+		Set<Person> persons = new HashSet<Person>();
+		persons.add(new Person(13));
+		persons.add(new Person(33));
+		persons.add(new Person(21));
+		persons.add(new Person(21)); 
+		System.out.print(persons.size()+" ");
+		System.out.print(persons); }}
+class Person implements Comparable<Person> {
+	Integer age;
+	public Person(int age) {
+		this.age = age;
+	}
+	public int compareTo(Person p) {
+		return p.age.compareTo(this.age);
+	}
+		public String toString() {
+		return ""+ this.age;
+	}
+}
+A. 3 [13, 21, 33]
+B. 4 [33, 21, 21, 13]
+C. Compilation Error as duplicates are not allowed in HashSet
+D. Runtime Error as duplicates are not allowed in HashSet
+
+
+Q43) Which of these packages contain all the collection classes in Java ?
+A. java.lang
+B. java.util
+C. java.awt
+D. java.net
+
+Q 44) Which of these methods deletes all the elements from invoking collection?
+a) clear()
+b) reset()
+c) delete()
+d) refresh()
+
+Q45) Which of the following interface is used for implementing "natural sorting" algorithm.
+a) Comparable
+b) Comparator
+c) Serializable
+d) None of the above
+
+Q46)Comparator has which method
+a) compareTo
+b) compare
+c) check
+d) None of the above
+
+
+Q47) What is O/P following Code
+import java.util.*;
+class MapEQ {
+ public static void main(String[] args) {
+ Map<ToDos, String> m = new HashMap<ToDos, String>();
+ ToDos t1 = new ToDos("Monday");
+ ToDos t2 = new ToDos("Monday");
+ ToDos t3 = new ToDos("Tuesday");
+ m.put(t1, "doLaundry");
+ m.put(t2, "payBills");
+ m.put(t3, "cleanAttic");
+ System.out.println(m.size());
+ }
+}
+class ToDos{
+ String day;
+ ToDos(String d) { day = d; }
+ public boolean equals(Object o) {
+ return ((ToDos)o).day == this.day;
+ }
+ // public int hashCode() { return 9; }
+
+Which is correct? (Choose all that apply.)
+ a. As the code stands it will not compile
+ b. As the code stands the output will be 3
+ c. Exception
+ d. If the hashCode() method is uncommented the output will be 3
+
+
+Q48) What is the O/P following code
+import java.util.*;
+ class Dog { int size; Dog(int s) { size = s; } }
+ public class FirstGrade {
+ public static void main(String[] args) {
+ TreeSet<Integer> i = new TreeSet<Integer>();
+ TreeSet<Dog> d = new TreeSet<Dog>();
+ 
+d.add(new Dog(1)); d.add(new Dog(2)); d.add(new Dog(1));
+i.add(1); i.add(2); i.add(1);
+ System.out.println(d.size() + " " + i.size());
+}
+}
+
+ a. 1 2
+ b. 2 2
+ c. Compilation fails
+ d. An exception is thrown at runtime
