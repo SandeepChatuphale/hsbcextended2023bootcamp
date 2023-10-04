@@ -820,3 +820,468 @@ i.add(1); i.add(2); i.add(1);
  b. 2 2
  c. Compilation fails
  d. An exception is thrown at runtime
+
+----------------------------------First Test------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+Q1)
+What is the output of the following?
+class Magazine {
+private String name;
+public Magazine(String name) {
+this.name = name;
+}
+public int compareTo(Magazine m) {
+return name.compareTo(m.name);
+}
+public String toString() {
+return name;
+}
+}
+public class Newstand {
+public static void main(String[] args) {
+Set<Magazine> set = new TreeSet<>();
+set.add(new Magazine("highlights"));
+set.add(new Magazine("Newsweek"));
+set.add(new Magazine("highlights"));
+System.out.println(set.iterator().next());
+}
+}
+A. highlights
+B. Newsweek
+C. The code does not compile.
+D. The code compiles but throws an exception at runtime.
+
+
+
+Q2)
+Fill in the blank to make this code compile:
+public class Truck implements Comparable<Truck> {
+private int id;
+public Truck(int id) {
+this.id = id;
+}
+@Override
+____________________ {
+return id - t.id;
+}
+}
+A. public int compare(Truck t)
+B. public int compare(Truck t1, Truck t2)
+C. public int compareTo(Truck t)
+D. public int compareTo(Truck t1, Truck t2)
+
+
+
+Q3)What is O/P?
+TreeMap<String, Integer> map = new TreeMap<>();	
+map.put("three", 3);
+map.put("3", 3);
+map.put("THREE", 3);
+System.out.println(map);
+
+A. {3=3, THREE=3, three=3}
+B. {THREE=3, three=3,3=3}
+C. {three=3, THREE=3,3=3}
+D. compilation error
+E. Exception
+
+
+Q4)
+What is the result of the following?
+List<String> list = new ArrayList<>();
+list.add("Austin");
+list.add("Boston");
+list.add("San Francisco");
+list.removeIf(a -> a.length() > 10);
+System.out.println(list.size());
+A. 1
+B. 2
+C. 3
+D. None of the above
+
+
+
+Q5)
+What is the output of the following?
+class Magazine implements Comparable<Magazine> {
+private String name;
+public Magazine(String name) {
+this.name = name;
+}
+@Override
+public int compareTo(Magazine m) {
+return name.compareTo(m.name);
+}
+@Override
+public String toString() {
+return name;
+}
+}
+public class Newstand {
+public static void main(String[] args) {
+Set<Magazine> set = new TreeSet<>();
+set.add(new Magazine("highlights"));
+set.add(new Magazine("Newsweek"));
+set.add(new Magazine("highlights"));
+System.out.println(set.iterator().next());
+}
+}
+A. highlights
+B. Newsweek
+C. The code does not compile.
+D. The code compiles but throws an exception at runtime.
+
+
+
+Q6)
+ How many lines of the following program contain compilation errors?
+package theater;
+class Cinema {
+private String name;
+public Cinema(String name) {this.name = name;}
+}
+public class Movie extends Cinema {
+public Movie(String movie) {}
+public static void main(String[] showing) {
+System.out.print(new Movie("Another Trilogy").name);
+}
+}
+A. None
+B. One
+C. Two
+D. Three
+
+
+
+
+
+
+
+Q7)What is the output of the following application?
+package radio;
+public class Song {
+public void playMusic() {
+System.out.print("Play!");
+}
+private static int playMusic() {
+System.out.print("Music!");
+return 0;
+}
+public static void main(String[] tracks) {
+new Song().playMusic();
+}
+}
+A. Play!
+B. Music!
+C. The code does not compile.
+D. The code compiles but the answer cannot be determined until runtime.
+
+
+
+
+
+
+
+
+
+Q8)
+class Automobile {
+private final String drive() { return "Driving vehicle"; }
+}
+class Car extends Automobile {
+protected String drive() { return "Driving car"; }
+}
+public class ElectricCar extends Car {
+public final String drive() { return "Driving electric car"; }
+public static void main(String[] wheels) {
+final Car car = new ElectricCar();
+System.out.print(car.drive());
+}
+}
+
+A. Driving vehicle
+B. Driving electric car
+C. Driving car
+D. The code does not compile.
+
+
+
+
+
+
+
+Q9)
+What is the output of the following application?
+package machines;
+class Computer {
+protected final int process() { return 5; }
+}
+public class Laptop extends Computer {
+public final int process() { return 3; }
+public static void main(String[] chips) {
+System.out.print(new Laptop().process());
+}
+}
+A. 5
+B. 3
+C. The code does not compile.
+D. The code compiles but throws an exception at runtime.
+
+
+
+Q10)
+interface Run {
+default void walk() {
+System.out.print("Walking and running!");
+}
+}
+interface Jog {
+default void walk() {
+System.out.print("Walking and jogging!");
+}
+}
+public class Sprint implements Run, Jog {
+public void walk() {
+System.out.print("Sprinting!");
+}
+public static void main(String []args) {
+new Sprint().walk();
+}
+}
+
+A. Walking and running!
+B. Walking and jogging!
+C. Sprinting!
+D. The code does not compile.
+
+
+
+Q11)
+Which of the following statements about interfaces is not true?
+A. An interface can extend another interface.
+B. An interface can implement another interface.
+C. A class can implement two interfaces.
+D. A class can extend another class.
+
+Q12)
+What is the output of the following application?
+class Ship {
+protected int weight = 3;
+private int height = 5;
+public int getWeight() { return weight; }
+public int getHeight() { return height; }
+}
+public class Rocket extends Ship {
+public int weight = 2;
+public int height = 4;
+public void printDetails() {
+System.out.print(super.getWeight()+","+super.height);
+}
+public static final void main(String[] fuel) {
+new Rocket().printDetails();
+}
+}
+A. 2,5
+B. 3,4
+C. 3,5
+D. The code does not compile.
+
+13) Which is the mandatory condition to define a functional interface in Java 8?
+(a) The interface MUST have @functionalInterface annotation on top of it
+(b) The interface MUST have only one method
+(c) The interface MUST have only one abstract method
+(d) The interface MUST at least have one method 
+
+
+14)  what is the O/p?
+interface I1
+{
+	default void m1()
+	{
+		System.out.println("In I1()");
+	}
+}
+
+interface I2
+{
+	default void m1()
+	{
+		System.out.println("In I2()");
+	}
+}
+
+public class Demo implements I1,I2 {
+
+	public static void main(String[] args) {
+		Demo d = new Demo();
+		d.m1();		
+	}	 
+}
+
+a) compilation error (class Demo inherits unrelated defaults for m1() from types I1 and I2 public class Demo implements I1,I2 {)
+b) no O/P
+c) In I1 
+    In I2
+d) none of the above
+
+
+
+
+15) what is the o/p?
+interface I1
+{
+	default void m1()
+	{
+		System.out.println("In I1()");
+	}
+}
+interface I2
+{
+	default void m1()
+	{
+		System.out.println("In I2()");
+	}
+}
+public class Demo implements I1,I2 {
+
+	public static void main(String[] args) {
+		Demo d = new Demo();
+		d.m1();
+	}
+	@Override
+	public void m1() {
+		I2.super.m1();
+	}	 
+}
+a) compilation error (class Demo inherits unrelated defaults for m1() from types I1 and I2 public class Demo implements I1,I2 {)
+b) no O/P
+c) In I1 
+    In I2
+d) In I2
+
+
+
+
+16)
+what is the O/p?
+
+interface I1
+{
+	void m1();
+}
+
+interface I2
+{
+	void m1();
+}
+
+public class Demo implements I1,I2 {
+
+	public void m1(){
+		System.out.println("In m1()");
+	}
+	public static void main(String[] args) {
+		Demo d = new Demo();
+		d.m1();		
+	}	 
+}
+
+a) compilation error
+b) In m1()
+c) Exception
+d) None of the above
+
+
+
+
+17)
+what is the O/p?
+
+interface I1
+{
+	void m1();
+}
+
+interface I2 extends I1
+{
+	void m2();
+}
+
+public class Demo implements I2 {
+
+	public void m2(){
+		System.out.println("In m2()");
+	}
+	public static void main(String[] args) {
+		Demo d = new Demo();
+		d.m2();		
+	}	 
+}
+
+a) compilation error
+b) Exception
+c) In m2()
+d) None of the above
+
+
+
+
+18) Which annotation is used to declare a functional interface in Java 8?
+a) @FunctionalInterface 
+b) @Interface 
+c) @Lambda 
+d) @Functional 
+
+
+19) State TRUE OR FALSE
+Is it Mandate to annotate functional interface with @FunctionalInterface?
+
+
+20) Given
+interface A {
+     int aMethod(String s);
+}
+Which of the following are valid statements?
+A. A a = a -> a.length();
+B. A x = y -> {return y;};
+C. A s = "2" -> return Integer.parseInt(s);
+D. A b = (String s) -> 1;
+
+
+21) Lambda expressions in java 8 are based on
+A. Procedural Programming
+B. Functional Programming
+C. Data Programming
+D. All of the Above.
+
+
+Q22)Which of the following is NOT functional interface 
+a) Comparable
+b) Runnable
+c) Comparator
+d) Serializable
+
+Q23) Which of the following is NOT a valid lambda expression?
+A. (Integer j, k) -> 5
+B. (p,q) -> p+q
+C. (Integer x, Integer y) -> x*y
+D. (left,right) -> {return "null";}
+
+
+
+Q24)
+What is the method reference feature in Java 8?
+(a) A way to create a new object using a constructor reference 
+(b) A way to call a static method using a method reference 
+(c) A way to call an instance method using a method reference
+(d) All of the above
+
+
+Q25) Which package contains the Predicate functional interface in Java 8? 
+a) java.util 
+b) java.lang 
+c) java.util.function 
+d) java.util.stream 
+
+
