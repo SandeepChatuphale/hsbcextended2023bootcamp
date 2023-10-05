@@ -1283,3 +1283,403 @@ a) java.util
 b) java.lang 
 c) java.util.function 
 d) java.util.stream 
+
+//---------------------------------------------Second Test---------------------------------------------
+
+1)Given:
+public static void before() {
+ Set set = new TreeSet();
+ set.add("2");
+ set.add(3);
+ set.add("1");
+ Iterator it = set.iterator();
+ while (it.hasNext())
+ System.out.print(it.next() + " ");
+}
+ Which statements are true?
+ A. The before() method will print 1 2
+ B. The before() method will print 1 2 3
+ C. The before() method will print three numbers, but the order cannot be determined
+ D. The before() method will not compile
+ E. The before() method will throw an exception at runtime
+
+
+
+
+2) Given:
+import java.util.*;
+class MapEQ {
+ public static void main(String[] args) {
+ Map<ToDos, String> m = new HashMap<ToDos, String>();
+ ToDos t1 = new ToDos("Monday");
+ ToDos t2 = new ToDos("Monday");
+ ToDos t3 = new ToDos("Tuesday");
+ m.put(t1, "doLaundry");
+ m.put(t2, "payBills");
+ m.put(t3, "cleanAttic");
+ System.out.println(m.size());
+} }
+class ToDos{
+ String day;
+ ToDos(String d) { day = d; }
+ public boolean equals(Object o) {
+ return ((ToDos)o).day == this.day;
+ }
+ // public int hashCode() { return 9; }
+}
+ Which is correct? (Choose all that apply.)
+ A. As the code stands it will not compile
+ B. As the code stands the output will be 2
+ C. As the code stands the output will be 3
+ D. If the hashCode() method is uncommented the output will be 2
+ E. If the hashCode() method is uncommented the output will be 3
+ F. If the hashCode() method is uncommented the code will not compile
+
+
+
+3) Given:
+ 3. import java.util.*;
+ 4. class Dog { int size; Dog(int s) { size = s; } }
+ 5. public class FirstGrade {
+ 6. public static void main(String[] args) {
+ 7. TreeSet<Integer> i = new TreeSet<Integer>();
+ 8. TreeSet<Dog> d = new TreeSet<Dog>();
+ 9.
+10. d.add(new Dog(1)); d.add(new Dog(2)); d.add(new Dog(1));
+11. i.add(1); i.add(2); i.add(1);
+12. System.out.println(d.size() + " " + i.size());
+13. }
+14. }
+ What is the result?
+ A. 1 2
+ B. 2 2
+ C. 2 3
+ D. 3 2
+ E. 3 3
+ F. Compilation fails
+ G. An exception is thrown at runtime
+
+
+
+
+
+4)
+import java.util.*;
+class UtilitiesTest {
+    public static void main(String[] args) {
+        List < int > intList = new ArrayList < > ();
+        intList.add(10);
+        intList.add(20);
+        System.out.println("The list is: " + intList);
+}
+}
+
+A. It prints the following: The list is: [10, 20] 
+B. It prints the following: The list is: [20, 10] 
+C. It results in a compiler error 
+D. It results in a runtime exception
+
+5) Which statements are true about comparing two instances of the same class, given that the 
+equals() and hashCode() methods have been properly overridden? (Choose all that apply.)
+ A. If the equals() method returns true, the hashCode() comparison == might return false
+ B. If the equals() method returns false, the hashCode() comparison == might return true
+ C. If the hashCode() comparison == returns true, the equals() method must return true
+ D. If the hashCode() comparison == returns true, the equals() method might return true
+ E. If the hashCode() comparison != returns true, the equals() method might return true
+
+6)  
+Given:
+ 1. class Loopy {
+ 2.   public static void main(String[] args) {
+ 3.     int[] x = {7,6,5,4,3,2,1};
+ 4.     // insert code here 
+5.       System.out.print(y + " ");
+ 6.     }
+ 7. } }
+ Which, inserted independently at line 4, compiles? (Choose all that apply.)
+ A. for(int y : x) {
+ B. for(x : int y) {
+ C. int y = 0; for(y : x) {
+ D. for(int y=0, z=0; z<x.length; z++) { y = x[z]; 
+E. for(int y=0, int z=0; z<x.length; z++) { y = x[z]; 
+F. int y = 0; for(int z=0; z<x.length; z++) { y = x[z];
+
+
+
+7. Predict the correct sequence of output after executing the below Java application
+public class MyThread implements Runnable {
+   String msg = "default";
+   public MyThread(String s) {
+      this.msg = s;
+   }
+   public void run() {
+      System.out.println(msg);
+   }
+   public static void main(String args[]) {
+      new Thread(new MyThread("String1")).run();
+      new Thread(new MyThread("String2")).run();
+      System.out.println("end");
+   }
+}
+A. The program will print only "end"
+B. The program would always print in the order - String1 String2 end
+C. The program would print String 1 and String 2 in random order followed by end
+D. No specific order is guaranteed.
+
+
+8. In Java, a thread can be created by 
+A. Extending the Thread class
+B. Implementing the Runnable interface
+C. Both of the Above
+D. None of these
+
+
+9. Predict the correct output of below Java code
+    public class Test implements Runnable{
+         public static void main(String args[]) {
+	      Thread t = new Thread(new Test());
+	      t.start();
+	      System.out.println("This is main thread");
+	 }
+	 @Override
+	 public void run() {
+		System.out.println("Thread has started");
+	 }
+    }
+
+A. This is main thread
+   Thread has started
+B. Thread has started
+   This is main thread
+C. No specific order is guaranteed
+D. None of the Above
+
+
+
+10. Predict the correct output of below Java code
+    public class Test extends Thread{
+         public static void main(String args[]) {
+	      Test t = new Test();
+	      t.run();
+	      t.start();
+	 }
+	 @Override
+	 public void run() {
+	      System.out.println("running");
+	 }
+    }
+A. running
+   running
+B. running
+C. Compilation Error
+D. Runtime Error
+
+
+
+11
+The following block of code creates a Thread using a Runnable target:
+Runnable target = new MyRunnable();
+Thread myThread = new Thread(target);
+ Which of the following classes can be used to create the target, so that the preceding code 
+compiles correctly?
+ A. public class MyRunnable extends Runnable{public void run(){}}
+ B. public class MyRunnable extends Object{public void run(){}}
+ C. public class MyRunnable implements Runnable{public void run(){}}
+ D. public class MyRunnable implements Runnable{void run(){}}
+
+12)class MyThread extends Thread { 
+ public static void main(String [] args) {
+ MyThread t = new MyThread();
+ Thread x = new Thread(t);
+ x.start();
+ } 
+ public void run() {
+ for(int i=0;i<3;++i) {
+ System.out.print(i + "..");
+ } } } 
+
+ What is the result of this code?
+ A. Compilation fails
+ B. 1..2..3..
+ C. 0..1..2..3..
+ D. 0..1..2..
+
+
+
+
+13
+What does the following print?
+class Laptop extends Computer {
+String type = "laptop";
+}
+public class Computer {
+String type = "computer";
+public static void main(String[] args) {
+Computer computer = new Laptop();
+Laptop laptop = new Laptop();
+System.out.print(computer.type + "," + laptop.type);
+}
+}
+A. computer,laptop
+B. laptop,computer
+C. laptop,laptop
+D. None of the above
+
+
+14)
+import java.util.List;
+public class Demo
+{
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1, 2);
+		list.add(45);
+		System.out.println(list.size());		
+	}
+}
+
+A. compilation error
+B. 3
+C. Exception
+D. None of the above
+
+Q15) Which of the following compiles fine.
+A. Predicate<String> p = (s) -> System.out.println(s);
+B. Consumer<String> p = (s) -> System.out.println(s);
+C. Supplier<String> p = (s) -> System.out.println(s);
+D. Function<String> p = (s) -> System.out.println(s);
+
+Q16) Which of the following compiles fine.
+A. Predicate<String> p = () -> "9";
+B. Consumer<String> p = () -> "9";
+C. Supplier<String> p = () -> "9";
+D. Function<String> p = () -> "9";
+
+Q17) Which of the following compiles fine.
+A. Predicate<Integer> p = (s) -> true;
+B. Consumer<Integer> p = (s) -> true;
+C. Supplier<Integer> p = (s) -> true;
+D. Function<Integer> p = (s) -> true;
+
+
+Q18) Which of the following DOES compile.
+A. Predicate<Integer> p = (s) -> {true};
+B. Predicate<Integer> p = (s) -> true;
+C. Predicate<Integer> p = (s) -> {return true};
+D. Predicate<Integer> p = (s) -> s;
+E. Predicate<Integer> p = (s) -> {true;};
+
+
+Q19)
+class MyThread extends Thread { 
+ public static void main(String [] args) {
+ MyThread t = new MyThread();
+ Thread x = new Thread(t);
+ x.start();
+ x.start();
+ } 
+ public void run() {
+ for(int i=0;i<3;++i) {
+ System.out.print(i + "..");
+ } } } 
+
+ What is the result of this code?
+ A. Compilation fails
+ B. 1..2..3..1..2..3
+ C. 0..1..2..3..
+ D. 0..1..2..0..1..2..3
+ E. None of the above
+
+Q20) Runnable interface contains which method?
+A.start()
+B.equals()
+C.sleep
+D. None of  the above
+
+21. Which statement/s is/are true?
+    a. PreparedStatement is precompiled
+    b. PreparedStatement boosts performance of the application
+    c. PreparedStatement is used for parameterized query
+
+A. a and b
+B. b and c
+C. a, b and c
+D. a and c
+
+22. Rearrange the following steps in proper order to connect to the database using JDBC API
+    1)	Create connection using database url.
+    2)	Load and register the driver.
+    3)	Fire the query.
+    4)	Create statement.
+    5)	Close connection.
+
+A. 1-2-3-4-5
+B. 2-1-4-3-5
+C. 2-4-1-3-5
+D. 1-4-2-3-5
+
+23. Assume the table Employee in database as below.	
+    Id	name  Address
+    1	John  Mumbai
+    Connectivity to the database is properly done.
+    Statement statement = connection.createStatement();
+   PrepatedStatement s
+    ResultSet rs = statement.executeQuery(“select address from Employee”);
+    rs.next();
+    Which statement will give address value?
+
+A. rs.getString(3)
+B. rs.getString(1)
+C. rs.getString(2)
+D. rs.getString(0)
+
+
+Q24) To avoid SQL injection in JDBC code, the Java application needs to use
+A. Statement
+B. CallStatement
+C. PreparedStatement
+D. NoInjectionStatement
+
+
+	
+Q25) Which of the following method is used to perform DML statements in JDBC?
+a. executeResult()
+b. executeQuery()
+c. executeUpdate()
+d. None of the above
+
+Q26)  Which of the following interface provides the commit() and rollback() methods?
+
+a) Statement Interface
+b) ResultSet Interface
+c) Connection Interface
+d) None of the above
+
+
+Q27) What must be the first characters of a database URL?
+A. db,
+B. db:
+C. jdbc,
+D. jdbc:
+
+Q28) Which of these obtains a Connection?
+A. Connection.getConnection(url)
+B. Driver.getConnection(url)
+C. DriverManager.getConnection(url)
+D. new Connection(url)
+
+
+Q29) What is return type of executeUpdate()?
+A. int
+B. ResultSet
+C. long
+D. boolean
+
+
+Q30) What is return type of executeQuery()?
+A. int
+B. ResultSet
+C. long
+D. boolean
+
+
+
