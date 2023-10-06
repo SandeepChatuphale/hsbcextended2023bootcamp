@@ -1681,5 +1681,195 @@ B. ResultSet
 C. long
 D. boolean
 
+//-----------------------------------------Web MCQ-------------------------------
 
 
+1) Which of the following keywords is used to define a variable in Javascript?
+
+a) var
+b) let
+c) both a,b
+d) None of the above
+
+
+
+2) Which of the following methods is used to access HTML elements using Javascript?
+a) getElementById()
+b) getElementsByClassName()
+c) both a,b
+d) None of the above
+
+
+3) How to declare a constant in JS?
+a) var
+b) let
+c) const
+d) constant
+
+
+4) What will be the output of the following code snippet?
+<script type="text/javascript">
+a = 5 + "9";
+document.write(a);
+</script>
+
+a) Error
+b) 14
+c) 9
+d) 59
+
+
+5) What will be the output of the following code snippet?
+	<script type="text/javascript">
+	let arr = [10,40,56];
+	document.write(arr[-1]);
+	</script>
+
+a) Error
+b) undefined
+c) null
+d) None of the above
+
+
+6) CSS stands for
+a) Cascading Style sheets
+b) Color and style sheets
+c) Combination style sheets
+d) None of the above
+
+
+7) In how many ways can CSS be applied?
+a) 1
+b) 2
+c) 3
+d) 4
+
+
+8)  
+What type of CSS is generally recommended for designing large web pages?
+a) Inline
+b) Internal
+c) External
+d) none of the above
+
+
+
+
+9) Which HTML tag is used to declare internal CSS?
+a) <style> 
+b) <link>
+c) <script>
+d) None of the above
+
+
+
+10) Which HTML tag is used to declare external CSS?
+a) <style> 
+b) <link>
+c) <script>
+d) None of the above
+
+11)  How can we select an element with a specific ID in CSS?
+a) #
+b) .
+c) &
+d) None of the above
+
+
+12) Which tag is used to embed javascript inside html?
+a) javascript
+b) embed
+c) link
+d) none of the above
+
+13) What is the O/P?
+<script>
+    let l = [12,20];    
+   l[3] = ['a','b'];	
+console.log(l[2]) 
+</script>
+
+a) undefined
+b) error
+c) null
+d) none of the above
+
+
+Q14) What is the O/P?
+<script>
+    const l = [12,20];    
+   l[1] = ['a','b'];	
+  console.log(l[1]);
+</script>
+
+a) undefined
+b) error
+c) null
+d) none of the above
+
+Q15)What is the O/P?
+<script>
+    const l = [12,20];    
+   l = ['a','b'];	
+  console.log(l[1]);
+</script>
+
+a) undefined
+b) error
+c) null
+d) none of the above
+
+
+Q16) Which of the following are ES6 features?
+a) let
+b) const
+c) arrow function
+d) all of the above
+
+
+
+
+Q17) What is the O/P?
+function hi(a){
+	console.log(a)
+}
+		
+hi();
+
+a) undefined
+b) error
+c) null
+d) none of the above
+
+
+Q18) what is  the O/P?
+let a = 10;
+a = 'hi';
+console.log(a);
+
+a) 10
+b) hi
+c) error
+d) can't predict
+
+Q19) What is the O/P?
+let a = 10;
+let a = 'ok';
+console.log(a);
+
+a)ok
+b) 10
+c) error
+d) undefined
+
+
+
+Q20) What is the O/P?
+var a = 10;
+var a = 'ok';
+console.log(a);
+
+a)ok
+b) 10
+c) error
+d) undefined
